@@ -1,39 +1,39 @@
 // src/router.tsx
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-import Home from './pages/Home';
-import Forecast from './pages/Forecast';
-import ModelManagement from './pages/ModelManagement';
-import Login from './pages/Login';
-import DataComparison from './pages/DataComparison';
-import Reports from './pages/Reports';
-import WeatherInfo from './pages/WeatherInfo';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import DashboardPage from './pages/DashboardPage';
+import UltraShortTermForecastPage from './pages/UltraShortTermForecastPage'
+import ShortTermForecastPage from './pages/ShortTermForecastPage'
+import ModelManagementPage from './pages/ModelManagementPage'
+import WindSpeedPowerComparisonPage from './pages/WindSpeedPowerComparisonPage'
+import ReportsAnalyticsPage from './pages/ReportsAnalyticsPage'
+import { WindSpeedPage, WindDirectionPage, TemperaturePage, HumidityPage, AirPressurePage }  from './pages/weather/WeatherSubmenuPage'
+import LoginPage from './pages/Login';
 
-import DashboardLayout from './layout/DashboardLayout'; // Import the new layout
-import { useAuthStore } from './store/authStore';
+import Layout  from './layout/Layout'
 
-// Removed ProtectedRoute as DashboardLayout handles the protection
-// function ProtectedRoute({ children }: { children: React.ReactNode }) {
-//   const isLoggedIn = useAuthStore((state) => state.isLoggedIn);
-//   return isLoggedIn ? <>{children}</> : <Navigate to="/login" />;
-// }
 
 export default function AppRouter() {
   return (
     <Router>
-      <Routes>
-        <Route path="/login" element={<Login />} />
-        {/* All protected routes are now children of DashboardLayout */}
-        <Route element={<DashboardLayout />}>
-          <Route path="/" element={<Home />} />
-          <Route path="/forecast" element={<Forecast />} />
-          <Route path="/models" element={<ModelManagement />} />
-          <Route path="/comparison" element={<DataComparison />} />
-          <Route path="/reports" element={<Reports />} />
-          <Route path="/weather" element={<WeatherInfo />} />
-        </Route>
-        {/* Redirect any unmatched routes to home or login */}
-        <Route path="*" element={<Navigate to="/" replace />} />
-      </Routes>
+      <Layout>
+        <Routes>
+          <Route path="/" element={<DashboardPage />} />
+          <Route path="/forecast/ultra-short-term" element={<UltraShortTermForecastPage />} />
+          <Route path="/forecast/short-term" element={<ShortTermForecastPage />} />
+          <Route path="/models" element={<ModelManagementPage />} />
+          <Route path="/comparison" element={<WindSpeedPowerComparisonPage />} />
+          <Route path="/reports" element={<ReportsAnalyticsPage />} />
+          {/* Weather Submenu Routes */}
+          <Route path="/weather/wind-speed" element={<WindSpeedPage />} />
+          <Route path="/weather/wind-direction" element={<WindDirectionPage />} />
+          <Route path="/weather/temperature" element={<TemperaturePage />} />
+          <Route path="/weather/humidity" element={<HumidityPage />} />
+          <Route path="/weather/air-pressure" element={<AirPressurePage />} />
+          <Route path="/login" element={<LoginPage />} />
+          {/* Fallback for unknown routes */}
+          <Route path="*" element={<div className="p-8 text-center text-gray-600">404 - Page Not Found</div>} />
+        </Routes>
+      </Layout>
     </Router>
   );
 }

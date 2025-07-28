@@ -4,11 +4,9 @@ import { useAuthStore } from '../store/authStore';
 import { useModelStore } from '../store/modelStore';
 import { useState, useEffect } from 'react';
 
-interface HeaderProps {
-  onMenuClick?: () => void;
-}
+interface HeaderProps {} // Empty interface as no props are currently passed
 
-export default function Header({ onMenuClick }: HeaderProps) {
+function Header({}: HeaderProps) {
   const logout = useAuthStore((state) => state.logout);
   const isLoggedIn = useAuthStore((state) => state.isLoggedIn);
 
@@ -39,15 +37,6 @@ export default function Header({ onMenuClick }: HeaderProps) {
   return (
     <header className="sticky top-0 z-30 bg-white border-b border-gray-200 shadow-sm flex items-center justify-between px-6 py-3">
       <div className="flex items-center space-x-4">
-        {onMenuClick && (
-          <button
-            onClick={onMenuClick}
-            className="md:hidden p-2 rounded-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
-            aria-label="Open sidebar"
-          >
-            ☰
-          </button>
-        )}
         <Link to="/" className="text-2xl font-extrabold text-blue-700 hover:text-blue-800">
           🌬️ WindFlow Dashboard
         </Link>
@@ -83,3 +72,5 @@ export default function Header({ onMenuClick }: HeaderProps) {
     </header>
   );
 }
+
+export default Header;

@@ -1,9 +1,9 @@
-// src/pages/Home.tsx
+// src/pages/HomePage.tsx
 import { useModelStore } from '../store/modelStore';
 import { useForecastStore } from '../store/forecastStore';
 import { Link } from 'react-router-dom';
 
-export default function Home() {
+export default function HomePage() {
   const { models, activeModelId } = useModelStore();
   const { historicalData } = useForecastStore();
 

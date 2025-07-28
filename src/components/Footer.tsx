@@ -1,9 +1,13 @@
 // src/components/Footer.tsx
-export default function Footer() {
+
+function Footer() {
+  const currentYear = new Date().getFullYear();
   return (
-    <footer className="border-t border-gray-200 bg-white py-4 text-center text-sm text-gray-500 select-none">
-      <p>Version 1.0</p>
-      <p>© 2025 WindFlow Corp.</p>
+    <footer className="bg-white border-t border-gray-200 text-gray-600 text-sm py-4 px-6 text-center mt-auto">
+      <p>&copy; {currentYear} WindFlow Dashboard. All rights reserved.</p>
+      <p className="mt-1">Powered by Advanced Wind Energy Analytics.</p>
     </footer>
   );
 }
+
+export default Footer;
