@@ -50,21 +50,25 @@ We'll organize the code like this:
 
 ```plaintext
 src/
-├── components/         → Reusable UI parts (charts, tables)
-├── pages/              → Route pages (Dashboard, Turbine)
-├── services/           → API calls
-├── store/
-├── assets/
-├── hooks/
+├── components/         → Reusable UI parts (charts, tables, UI elements)
+├── layout/             → Top-level layout components (e.g., DashboardLayout)
+├── pages/              → Route pages (Dashboard, Forecast, Model Management, Login, Reports)
+├── services/           → API calls (auth, forecast, models, reports, weather)
+├── store/              → Zustand stores (auth, forecast, models, dashboard state)
+├── assets/             → Images, icons
+├── hooks/              → Custom React Hooks
 ├── types/              → TypeScript interfaces
-├── App.tsx             → Main UI
-├── main.tsx            → Entry point
+├── App.tsx             → Main UI entry point
+├── main.tsx            → React entry point
+├── router.tsx          → React Router configuration
+├── index.css           → Global Tailwind CSS
+├── vite-env.d.ts       → Vite environment type definitions
 ```
 
 Let’s start by creating these folders:
 
 ```bash
-mkdir src/components src/pages src/services src/store src/assets src/hooks src/types
+mkdir src/components src/layout src/pages src/services src/store src/assets src/hooks src/types
 ```
 
 ## Phase 2: Add Pages and Routing (React Router)
@@ -188,6 +192,22 @@ export default defineConfig({
   	tailwindcss(),
   ],
 })
+```
+
+`tailwind.config.js` (create this file in your project root):
+
+```js
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}
 ```
 
 Then, create a Tailwind base CSS file.
