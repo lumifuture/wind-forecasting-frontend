@@ -80,7 +80,7 @@ const UltraShortTermForecastPage = () => {
       {/* Filter Conditions */}
       <div className="bg-white p-6 rounded-lg shadow-md mb-8">
         <h2 className="text-xl font-semibold text-gray-800 mb-4">Filter Forecast Data</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 items-end">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 items-end">
           {/* Electric Field Selection */}
           <div className="flex items-center gap-2">
             <label htmlFor="electric-field" className="text-sm font-medium text-gray-700">

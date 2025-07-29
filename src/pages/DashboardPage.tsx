@@ -90,9 +90,9 @@ const DashboardPage = () => {
     <div className="p-8 flex flex-col h-full bg-gray-50">
       <h1 className="text-3xl font-bold text-blue-800 mb-6">Dashboard Overview</h1>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 flex-1">
+      <div className="grid md:grid-cols-4 lg:grid-cols-4 gap-6 flex-1">
         {/* Upper Left: Station Data */}
-        <div className="bg-white p-6 rounded-lg shadow-md flex flex-col">
+        <div className="bg-white p-6 rounded-lg shadow-md flex flex-col md:col-span-1 lg:col-span-1">
           <h2 className="text-xl font-semibold text-gray-800 mb-4">Station Overview</h2>
           <div className="mb-4">
             <label htmlFor="station-select" className="block text-sm font-medium text-gray-700 mb-2">
@@ -124,7 +124,7 @@ const DashboardPage = () => {
         </div>
 
         {/* Upper Right: Today's Forecast Curve Chart */}
-        <div className="bg-white p-6 rounded-lg shadow-md flex flex-col">
+        <div className="bg-white p-6 rounded-lg shadow-md flex flex-col md:col-span-3 lg:col-span-3">
           <h2 className="text-xl font-semibold text-gray-800 mb-4">Today's Forecast</h2>
           <div className="flex-1 min-h-[200px]"> {/* Added min-h to ensure chart has space */}
             <ResponsiveContainer width="100%" height="100%">
@@ -144,7 +144,7 @@ const DashboardPage = () => {
         </div>
 
         {/* Lower Left: Today's Meteorological Data */}
-        <div className="bg-white p-6 rounded-lg shadow-md flex flex-col">
+        <div className="bg-white p-6 rounded-lg shadow-md flex flex-col md:col-span-1 lg:col-span-1">
           <h2 className="text-xl font-semibold text-gray-800 mb-4">Today's Meteorological Data</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
             <div>
@@ -207,7 +207,7 @@ const DashboardPage = () => {
         </div>
 
         {/* Lower Right: Accuracy and Reporting Rate Bar Chart */}
-        <div className="bg-white p-6 rounded-lg shadow-md flex flex-col">
+        <div className="bg-white p-6 rounded-lg shadow-md flex flex-col md:col-span-3 lg:col-span-3">
           <h2 className="text-xl font-semibold text-gray-800 mb-4">Prediction Accuracy & Reporting Rate</h2>
           <div className="flex-1 min-h-[200px]"> {/* Added min-h to ensure chart has space */}
             <ResponsiveContainer width="100%" height="100%">

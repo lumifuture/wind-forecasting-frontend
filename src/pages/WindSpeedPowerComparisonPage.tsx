@@ -77,7 +77,7 @@ const WindSpeedPowerComparisonPage = () => {
       {/* Filter Conditions */}
       <div className="bg-white p-6 rounded-lg shadow-md mb-8">
         <h2 className="text-xl font-semibold text-gray-800 mb-4">Filter Comparison Data</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-4 items-end">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-4 items-end">
           {/* Electric Field Selection */}
           <div className="flex items-center gap-2">
             <label htmlFor="comp-electric-field" className="text-sm font-medium text-gray-700">
@@ -168,21 +168,23 @@ const WindSpeedPowerComparisonPage = () => {
             />
           </div>
 
+          <div className="flex items-center gap-2">
           {/* Confirmation Button */}
-          <button
-            onClick={handleConfirm}
-            className="w-full md:w-auto px-4 py-2 bg-blue-600 text-white rounded-md shadow hover:bg-blue-700 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
-          >
-            Confirm
-          </button>
+            <button
+              onClick={handleConfirm}
+              className="w-full md:w-auto px-4 py-2 bg-blue-600 text-white rounded-md shadow hover:bg-blue-700 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+            >
+              Confirm
+            </button>
 
-          {/* Export Button */}
-          <button
-            onClick={handleExport}
-            className="w-full md:w-auto px-4 py-2 bg-gray-600 text-white rounded-md shadow hover:bg-gray-700 transition-colors focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2"
-          >
-            Export Data
-          </button>
+            {/* Export Button */}
+            <button
+              onClick={handleExport}
+              className="w-full md:w-auto px-4 py-2 bg-gray-600 text-white rounded-md shadow hover:bg-gray-700 transition-colors focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2"
+            >
+              Export
+            </button>
+          </div>
         </div>
       </div>
 

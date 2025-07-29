@@ -24,7 +24,16 @@ const navItems = [
   },
   { name: 'Model Management', path: '/models', icon: Settings },
   { name: 'Wind Speed Comparison', path: '/comparison', icon: Wind }, // This will now point to WindSpeedPowerComparisonPage
-  { name: 'Reports & Analytics', path: '/reports', icon: FileText },
+  { name: 'Reports & Analytics',
+    path: '/reports',
+    icon: FileText,
+    children: [
+      { name: 'Data Statistics', path: '/reports/data-statistics' },
+      { name: 'Operation Parameters', path: '/reports/operation-parameters' },
+      { name: 'Correlation Analysis', path: '/reports/correlation-analysis' },
+      { name: 'Error Statistics', path: '/reports/error-statistics' },
+    ],
+  },
   { name: 'Weather Information',
     path: '/weather',
     icon: Sun,
