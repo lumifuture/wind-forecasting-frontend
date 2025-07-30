@@ -1,5 +1,6 @@
 // src/router.tsx
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import AuthChecker from './components/AuthChecker';
 import DashboardPage from './pages/DashboardPage';
 import UltraShortTermForecastPage from './pages/UltraShortTermForecastPage'
 import ShortTermForecastPage from './pages/ShortTermForecastPage'
@@ -22,7 +23,9 @@ export default function AppRouter() {
     <Router>
       <Routes>
         <Route path="/login" element={<LoginPage />} />
-        <Route element={<Layout />}>
+        {/* AuthChecker wraps all protected routes */}
+        <Route element={<AuthChecker />}>
+          <Route element={<Layout />}>
           <Route path="/" element={<DashboardPage />} />
           <Route path="/forecast/ultra-short-term" element={<UltraShortTermForecastPage />} />
           <Route path="/forecast/short-term" element={<ShortTermForecastPage />} />
@@ -44,6 +47,7 @@ export default function AppRouter() {
           <Route path="/weather/air-pressure" element={<AirPressurePage />} />
           {/* Fallback for unknown routes */}
           <Route path="*" element={<div className="p-8 text-center text-gray-600">404 - Page Not Found</div>} />
+        </Route>
         </Route>
       </Routes>
     </Router>
