@@ -76,7 +76,7 @@ const CorrelationAnalysisPage = () => {
       {/* Filters */}
       <div className="bg-white p-6 rounded-lg shadow-md mb-8">
         <h2 className="text-xl font-semibold text-gray-800 mb-4">Filter Data</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
           <div>
             <label htmlFor="corr-farm-filter" className="block text-sm font-medium text-gray-700 mb-1">
               Wind Farm:

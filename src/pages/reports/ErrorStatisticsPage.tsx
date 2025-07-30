@@ -96,7 +96,7 @@ const ErrorStatisticsPage = () => {
       {/* Filters */}
       <div className="bg-white p-6 rounded-lg shadow-md mb-8">
         <h2 className="text-xl font-semibold text-gray-800 mb-4">Filter Data</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
           <div>
             <label htmlFor="error-farm-filter" className="block text-sm font-medium text-gray-700 mb-1">
               Wind Farm:
@@ -161,7 +161,7 @@ const ErrorStatisticsPage = () => {
       {/* Prediction Accuracy Evaluation Metrics */}
       <div className="bg-white p-6 rounded-lg shadow-md mb-8">
         <h2 className="text-xl font-semibold text-gray-800 mb-4">Key Performance Indicators</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
           <div className="bg-blue-50 p-3 rounded-md text-center">
             <p className="text-sm text-gray-600">Prediction Error</p>
             <p className="text-2xl font-bold text-blue-700">{errorStats.predictionError}</p>

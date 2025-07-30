@@ -68,7 +68,7 @@ export default function Login() {
         <div className="flex items-center justify-between">
           <button
             onClick={handleLogin}
-            className="bg-primary-600 hover:bg-primary-700 text-white font-bold py-3 px-6 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 transition duration-200 ease-in-out w-full text-lg shadow-medium"
+            className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 transition duration-200 ease-in-out w-full text-lg shadow-md"
             disabled={loading}
           >
             {loading ? (

@@ -1,17 +1,13 @@
 // src/layout/Layout.tsx
 
 import { useState } from 'react';
-import type { ReactNode } from 'react';
+import { Outlet } from 'react-router-dom';
 import Sidebar from '../components/Sidebar';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
 
-interface LayoutProps {
-  children: ReactNode;
-}
-
-function Layout({ children }: LayoutProps) { // Layout component is now defined before App
+function Layout() { // Layout component is now defined before App
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
 
   const toggleSidebar = () => {
@@ -28,7 +24,7 @@ function Layout({ children }: LayoutProps) { // Layout component is now defined 
         <Header /> {/* Header component is now inside this flex-col container */}
         <main className="flex-1 overflow-auto bg-gray-50 flex flex-col"> {/* main content takes remaining height, added flex-col */}
           <div className="flex-1"> {/* This div will contain the page content and take up available space */}
-            {children}
+            <Outlet /> {/* Outlet renders the child routes */}
           </div>
           <Footer /> {/* Footer component added here */}
         </main>

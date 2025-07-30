@@ -20,8 +20,9 @@ import Layout  from './layout/Layout'
 export default function AppRouter() {
   return (
     <Router>
-      <Layout>
-        <Routes>
+      <Routes>
+        <Route path="/login" element={<LoginPage />} />
+        <Route element={<Layout />}>
           <Route path="/" element={<DashboardPage />} />
           <Route path="/forecast/ultra-short-term" element={<UltraShortTermForecastPage />} />
           <Route path="/forecast/short-term" element={<ShortTermForecastPage />} />
@@ -41,11 +42,10 @@ export default function AppRouter() {
           <Route path="/weather/temperature" element={<TemperaturePage />} />
           <Route path="/weather/humidity" element={<HumidityPage />} />
           <Route path="/weather/air-pressure" element={<AirPressurePage />} />
-          <Route path="/login" element={<LoginPage />} />
           {/* Fallback for unknown routes */}
           <Route path="*" element={<div className="p-8 text-center text-gray-600">404 - Page Not Found</div>} />
-        </Routes>
-      </Layout>
+        </Route>
+      </Routes>
     </Router>
   );
 }
