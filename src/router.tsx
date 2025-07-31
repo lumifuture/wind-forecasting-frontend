@@ -14,6 +14,9 @@ import WindFarmOperationStatisticsPage    from './pages/reports/WindFarmOperatio
 import CorrelationAnalysisPage    from './pages/reports/CorrelationAnalysisPage'
 import ErrorStatisticsPage   from './pages/reports/ErrorStatisticsPage'
 
+import ModelOverviewPage from './pages/ModelManagement/ModelOverviewPage'
+import ModelDetailsPage from './pages/ModelManagement/ModelDetailsPage'
+import ModelPoliciesPage from './pages/ModelManagement/ModelPoliciesPage'
 
 import Layout  from './layout/Layout'
 
@@ -31,6 +34,12 @@ export default function AppRouter() {
           <Route path="/forecast/short-term" element={<ShortTermForecastPage />} />
           <Route path="/models" element={<ModelManagementPage />} />
           <Route path="/comparison" element={<WindSpeedPowerComparisonPage />} />
+
+          {/* Nested Model Management routes */}
+          <Route path="/models/overview" element={<ModelOverviewPage />} />
+          <Route path="/models/:modelId" element={<ModelDetailsPage />} /> {/* Dynamic route for model details */}
+          <Route path="/models/policies" element={<ModelPoliciesPage />} />
+
          {/* Reports & Analytics with sub-routes */}
           <Route path="/reports/*" > {/* Catch all for /reports */}
             <Route index element={<DataStatisticsPage />} /> {/* Default child route for /reports */}

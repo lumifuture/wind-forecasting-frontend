@@ -22,7 +22,14 @@ const navItems = [
       { name: 'Short-term forecast', path: '/forecast/short-term' },
     ],
   },
-  { name: 'Model Management', path: '/models', icon: Settings },
+  { name: 'Model Management',
+    path: '/models',
+    icon: Settings,
+    children: [
+      { name: 'Model Overview', path: '/models/overview' },
+      { name: 'Model Policies', path: '/models/policies' },
+    ],
+  },
   { name: 'Wind Speed Comparison', path: '/comparison', icon: Wind }, // This will now point to WindSpeedPowerComparisonPage
   { name: 'Reports & Analytics',
     path: '/reports',
