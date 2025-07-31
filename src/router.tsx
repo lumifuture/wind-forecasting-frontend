@@ -14,8 +14,10 @@ import WindFarmOperationStatisticsPage    from './pages/reports/WindFarmOperatio
 import CorrelationAnalysisPage    from './pages/reports/CorrelationAnalysisPage'
 import ErrorStatisticsPage   from './pages/reports/ErrorStatisticsPage'
 
-import ModelOverviewPage from './pages/ModelManagement/ModelOverviewPage'
-import ModelDetailsPage from './pages/ModelManagement/ModelDetailsPage'
+import ModelLifecyclePage from './pages/ModelManagement/ModelLifecyclePage'
+import TrainingHistoryPage from './pages/ModelManagement/TrainingHistoryPage'
+import ModelVersionsPage from './pages/ModelManagement/ModelVersionsPage'
+import RollbackMechanismPage from './pages/ModelManagement/RollbackMechanismPage'
 import ModelPoliciesPage from './pages/ModelManagement/ModelPoliciesPage'
 
 import Layout  from './layout/Layout'
@@ -36,9 +38,11 @@ export default function AppRouter() {
           <Route path="/comparison" element={<WindSpeedPowerComparisonPage />} />
 
           {/* Nested Model Management routes */}
-          <Route path="/models/overview" element={<ModelOverviewPage />} />
-          <Route path="/models/:modelId" element={<ModelDetailsPage />} /> {/* Dynamic route for model details */}
-          <Route path="/models/policies" element={<ModelPoliciesPage />} />
+          <Route path="/models/model-lifecycle" element={<ModelLifecyclePage />} />
+          <Route path="/models/training-history" element={<TrainingHistoryPage />} /> {/* Dynamic route for model details */}
+          <Route path="/models/model-versions" element={<ModelVersionsPage />} />
+          <Route path="/models/rollback-mechanism" element={<RollbackMechanismPage />} /> {/* Dynamic route for model details */}
+          <Route path="/models/model-policies" element={<ModelPoliciesPage />} />
 
          {/* Reports & Analytics with sub-routes */}
           <Route path="/reports/*" > {/* Catch all for /reports */}

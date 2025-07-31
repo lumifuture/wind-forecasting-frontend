@@ -4,7 +4,6 @@ import SidebarNavItem from './SidebarNavItem';
 
 import {
   LayoutDashboard,
-  LineChart,
   LineChartIcon,
   Settings,
   Wind,
@@ -26,8 +25,11 @@ const navItems = [
     path: '/models',
     icon: Settings,
     children: [
-      { name: 'Model Overview', path: '/models/overview' },
-      { name: 'Model Policies', path: '/models/policies' },
+      { name: 'Model Lifecycle', path: '/models/model-lifecycle' },
+      { name: 'Training History', path: '/models/training-history' },
+      { name: 'Model Versions', path: '/models/model-versions' },
+      { name: 'Rollback Mechanism', path: '/models/rollback-mechanism' },
+      { name: 'Model Policies', path: '/models/model-policies' },
     ],
   },
   { name: 'Wind Speed Comparison', path: '/comparison', icon: Wind }, // This will now point to WindSpeedPowerComparisonPage
