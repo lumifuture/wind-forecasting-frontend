@@ -10,16 +10,25 @@ import {
   FileText,
   Sun,
   MapPin,
+  Zap,
 } from 'lucide-react';
 
 const navItems = [
   { name: 'Dashboard Overview', path: '/', icon: LayoutDashboard },
-  { name: 'Wind Power Forecast',
+  { name: 'Power Forecast',
     path: '/forecast',
     icon: LineChartIcon, // Using LineChartIcon
     children: [
       { name: 'Ultra-short-term forecast', path: '/forecast/ultra-short-term' },
       { name: 'Short-term forecast', path: '/forecast/short-term' },
+    ],
+  },
+  { name: 'Energy Forecast',
+    path: '/energy-forecast',
+    icon: Zap,
+    children: [
+      { name: 'Daily Forecast', path: '/energy-forecast/daily' },
+      { name: 'Long-Term Forecast', path: '/energy-forecast/long-term' },
     ],
   },
   { name: 'Wind Speed Comparison', path: '/comparison', icon: Wind }, // This will now point to WindSpeedPowerComparisonPage
@@ -32,6 +41,15 @@ const navItems = [
       { name: 'Temperature', path: '/weather/temperature' },
       { name: 'Humidity', path: '/weather/humidity' },
       { name: 'Air Pressure', path: '/weather/air-pressure' },
+    ],
+  },
+  { name: 'Reporting Management',
+    path: '/reporting',
+    icon: FileText,
+    children: [
+      { name: 'Data Reporting', path: '/reporting/data' },
+      { name: 'Reporting Settings', path: '/reporting/settings' },
+      { name: 'Record Query', path: '/reporting/records' },
     ],
   },
   { name: 'Reports & Analytics',
@@ -62,6 +80,17 @@ const navItems = [
       { name: 'Manage Farms', path: '/farms/manage' },
       { name: 'Manage Turbines', path: '/farms/turbines' },
       { name: 'Group Farms', path: '/farms/groups' },
+    ],
+  },
+  { name: 'System Management',
+    path: '/system',
+    icon: MapPin,
+    children: [
+      { name: 'User Management', path: '/system/user-management' },
+      { name: 'Audit Logs', path: '/system/audit-logs' },
+      { name: 'Alerts', path: '/system/alerts' },
+      { name: 'System Monitoring', path: '/system/system-monitoring' },
+      { name: 'Reports', path: '/system/reports' },
     ],
   },
 ];
