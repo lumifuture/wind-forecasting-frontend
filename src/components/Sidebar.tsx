@@ -9,6 +9,7 @@ import {
   Wind,
   FileText,
   Sun,
+  MapPin,
 } from 'lucide-react';
 
 const navItems = [
@@ -19,6 +20,28 @@ const navItems = [
     children: [
       { name: 'Ultra-short-term forecast', path: '/forecast/ultra-short-term' },
       { name: 'Short-term forecast', path: '/forecast/short-term' },
+    ],
+  },
+  { name: 'Wind Speed Comparison', path: '/comparison', icon: Wind }, // This will now point to WindSpeedPowerComparisonPage
+  { name: 'Weather Information',
+    path: '/weather',
+    icon: Sun,
+    children: [
+      { name: 'Wind Speed', path: '/weather/wind-speed' },
+      { name: 'Wind Direction', path: '/weather/wind-direction' },
+      { name: 'Temperature', path: '/weather/temperature' },
+      { name: 'Humidity', path: '/weather/humidity' },
+      { name: 'Air Pressure', path: '/weather/air-pressure' },
+    ],
+  },
+  { name: 'Reports & Analytics',
+    path: '/reports',
+    icon: FileText,
+    children: [
+      { name: 'Data Statistics', path: '/reports/data-statistics' },
+      { name: 'Operation Parameters', path: '/reports/operation-parameters' },
+      { name: 'Correlation Analysis', path: '/reports/correlation-analysis' },
+      { name: 'Error Statistics', path: '/reports/error-statistics' },
     ],
   },
   { name: 'Model Management',
@@ -32,26 +55,13 @@ const navItems = [
       { name: 'Model Policies', path: '/models/model-policies' },
     ],
   },
-  { name: 'Wind Speed Comparison', path: '/comparison', icon: Wind }, // This will now point to WindSpeedPowerComparisonPage
-  { name: 'Reports & Analytics',
-    path: '/reports',
-    icon: FileText,
+  { name: 'Farms Management',
+    path: '/farms',
+    icon: MapPin,
     children: [
-      { name: 'Data Statistics', path: '/reports/data-statistics' },
-      { name: 'Operation Parameters', path: '/reports/operation-parameters' },
-      { name: 'Correlation Analysis', path: '/reports/correlation-analysis' },
-      { name: 'Error Statistics', path: '/reports/error-statistics' },
-    ],
-  },
-  { name: 'Weather Information',
-    path: '/weather',
-    icon: Sun,
-    children: [
-      { name: 'Wind Speed', path: '/weather/wind-speed' },
-      { name: 'Wind Direction', path: '/weather/wind-direction' },
-      { name: 'Temperature', path: '/weather/temperature' },
-      { name: 'Humidity', path: '/weather/humidity' },
-      { name: 'Air Pressure', path: '/weather/air-pressure' },
+      { name: 'Manage Farms', path: '/farms/manage' },
+      { name: 'Manage Turbines', path: '/farms/turbines' },
+      { name: 'Group Farms', path: '/farms/groups' },
     ],
   },
 ];

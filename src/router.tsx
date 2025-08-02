@@ -20,6 +20,10 @@ import ModelVersionsPage from './pages/ModelManagement/ModelVersionsPage'
 import RollbackMechanismPage from './pages/ModelManagement/RollbackMechanismPage'
 import ModelPoliciesPage from './pages/ModelManagement/ModelPoliciesPage'
 
+import FarmManagementPage from './pages/farms/FarmManagementPage'
+import TurbineManagementPage from './pages/farms/TurbineManagementPage'
+import FarmGroupingPage from './pages/farms/FarmGroupingPage'
+
 import Layout  from './layout/Layout'
 
 
@@ -37,13 +41,6 @@ export default function AppRouter() {
           <Route path="/models" element={<ModelManagementPage />} />
           <Route path="/comparison" element={<WindSpeedPowerComparisonPage />} />
 
-          {/* Nested Model Management routes */}
-          <Route path="/models/model-lifecycle" element={<ModelLifecyclePage />} />
-          <Route path="/models/training-history" element={<TrainingHistoryPage />} /> {/* Dynamic route for model details */}
-          <Route path="/models/model-versions" element={<ModelVersionsPage />} />
-          <Route path="/models/rollback-mechanism" element={<RollbackMechanismPage />} /> {/* Dynamic route for model details */}
-          <Route path="/models/model-policies" element={<ModelPoliciesPage />} />
-
          {/* Reports & Analytics with sub-routes */}
           <Route path="/reports/*" > {/* Catch all for /reports */}
             <Route index element={<DataStatisticsPage />} /> {/* Default child route for /reports */}
@@ -58,6 +55,18 @@ export default function AppRouter() {
           <Route path="/weather/temperature" element={<TemperaturePage />} />
           <Route path="/weather/humidity" element={<HumidityPage />} />
           <Route path="/weather/air-pressure" element={<AirPressurePage />} />
+
+          {/* Nested Model Management routes */}
+          <Route path="/models/model-lifecycle" element={<ModelLifecyclePage />} />
+          <Route path="/models/training-history" element={<TrainingHistoryPage />} /> {/* Dynamic route for model details */}
+          <Route path="/models/model-versions" element={<ModelVersionsPage />} />
+          <Route path="/models/rollback-mechanism" element={<RollbackMechanismPage />} /> {/* Dynamic route for model details */}
+          <Route path="/models/model-policies" element={<ModelPoliciesPage />} />
+          
+          <Route path="/farms/manage" element={<FarmManagementPage />} />
+          <Route path="/farms/turbines" element={<TurbineManagementPage />} />
+          <Route path="/farms/groups" element={<FarmGroupingPage />} />
+
           {/* Fallback for unknown routes */}
           <Route path="*" element={<div className="p-8 text-center text-gray-600">404 - Page Not Found</div>} />
         </Route>
